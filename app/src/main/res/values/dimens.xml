@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="standard_padding">16dp</dimen>
+    <dimen name="standard_horizontal_padding">8dp</dimen>
+    <dimen name="standard_vertical_padding">8dp</dimen>
+    <dimen name="calculator_button_padding">0dp</dimen>
 </resources>
