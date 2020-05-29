@@ -7,4 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="CalculatorButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">28sp</item>
+    </style>
 </resources>

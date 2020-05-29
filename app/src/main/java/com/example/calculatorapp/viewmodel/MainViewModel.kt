@@ -8,7 +8,8 @@ import com.example.calculatorapp.calculator_algorithm.MathCalculator
 class MainViewModel(private val calculator: MathCalculator) : ViewModel()
 {
     private val error = MutableLiveData<String>()
-    private var equation = ""
+    var isShowingEquationResult = false
+    var equation = ""
     fun calculateResultOfEquation() : Double
     {
         return try
@@ -22,8 +23,4 @@ class MainViewModel(private val calculator: MathCalculator) : ViewModel()
         }
     }
     fun getError() = error as LiveData<String>
-    fun setEquation(equation: String)
-    {
-        this.equation = equation
-    }
 }
