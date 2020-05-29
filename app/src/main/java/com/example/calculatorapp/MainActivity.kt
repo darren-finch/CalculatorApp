@@ -107,29 +107,24 @@ class MainActivity : AppCompatActivity()
     //region Append Functions
     private fun appendNumberToEquation(number: String)
     {
-        if(!viewModel.isShowingEquationResult)
+        var potentialWhitespace = ""
+        if (currentEquation.isNotEmpty() && lastCharInEquationIsAnOperation())
         {
-            var potentialWhitespace = ""
-            if (currentEquation.isNotEmpty() && lastCharInEquationIsAnOperation())
-            {
-                potentialWhitespace = " "
-            }
-            appendTextToEquation("$potentialWhitespace$number")
+            potentialWhitespace = " "
         }
+        appendTextToEquation("$potentialWhitespace$number")
     }
     private fun appendOperationToEquation(operation: String)
     {
-        if(!viewModel.isShowingEquationResult)
-        {
-            if(currentEquation.isNotEmpty() && isOperation(operation) && !lastCharInEquationIsAnOperation())
-                appendTextToEquation(" $operation")
-        }
+        if(currentEquation.isNotEmpty() && isOperation(operation) && !lastCharInEquationIsAnOperation())
+            appendTextToEquation(" $operation")
     }
     private fun appendDecimalToEquation()
     {
         if(currentEquation.isNotEmpty() && !lastCharInEquationIsAnOperation())
             appendTextToEquation(".")
     }
+    //Only will append text to the equation if we're not showing the equation result.
     private fun appendTextToEquation(text: String)
     {
         if(!viewModel.isShowingEquationResult)
